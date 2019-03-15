@@ -61,7 +61,7 @@ export class RootComponent implements OnInit, OnDestroy {
   refreshTokenPeriod(expiresIn) {
     setTimeout( () => {
       this.refreshToken();
-    }, (expiresIn - 20) * 1000);
+    }, (expiresIn - 30) * 1000);
   }
 
   changedTab(event) {

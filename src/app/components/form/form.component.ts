@@ -110,7 +110,10 @@ export class FormComponent implements OnInit, OnDestroy {
   }
 
   readParamsFromHistory(searchParams: AvailabilityInParamsModel) {
-    this.searchParams = {params: searchParams};
+    this.searchParams = {
+      params: searchParams,
+      options: {fromCache: true}
+    };
     this.portFrom = searchParams.origin[0];
     this.portTo = searchParams.destination[0];
     this.dF = this.commonService.makeISODate( searchParams.departureDate[0] );
