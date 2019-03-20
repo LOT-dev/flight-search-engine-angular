@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  server: 'https://api.lot.com/flights-v1/',
+  //server: 'https://api.lot.com/flights-v1/',
+  server: 'http://localhost:3000/',
   apiCredentials: {
     apiKey: '9YFNNKS31u9gCFKPetPWdAAjEXnED0B3K18AeYgg',
     appId: '2przp49a52',

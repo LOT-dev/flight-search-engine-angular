@@ -1,7 +1,7 @@
 export interface AvailabilityInModel {
   params: AvailabilityInParamsModel,
   options?: {
-    fareType?: string,
+    fareType?: string[],
     fromCache?: boolean
   }
 }
