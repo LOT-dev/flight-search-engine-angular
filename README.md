@@ -14,4 +14,4 @@ If you want to get access to the development or production environment, please c
 
 ## Demo
 
-https://apps.lot.com/demo/flights/angular
+https://apps.lot.com/flights/demo/angular
