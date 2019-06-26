@@ -4,12 +4,11 @@
 
 export const environment = {
   production: false,
-  //server: 'https://api.lot.com/flights-v1/',
-  server: 'http://localhost:3000/',
+  server: 'https://api.lot.com/flights-dev/v2/',
+  staticUrl: '',
   apiCredentials: {
     apiKey: '9YFNNKS31u9gCFKPetPWdAAjEXnED0B3K18AeYgg',
-    appId: '2przp49a52',
-    secretKey: 's5kft57wrPivA93fsf55fggr4pDcB62XPl7'
+    secretKey: '2przp49a52'
   }
 };
 

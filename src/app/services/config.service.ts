@@ -8,15 +8,16 @@ import { environment } from '../../environments/environment';
 export class ConfigService {
 
     public apiServer: string;
+    public staticUrl: string;
     public apiCredentials: {
       apiKey: string,
-      appId: string,
       secretKey: string
     };
 
     constructor() {
       this.apiServer = environment.server;
       this.apiCredentials = environment.apiCredentials;
+      this.staticUrl = environment.staticUrl;
     }
 
 }

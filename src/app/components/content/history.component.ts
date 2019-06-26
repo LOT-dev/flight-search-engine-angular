@@ -3,8 +3,8 @@ import { DatePipe } from '@angular/common';
 import { HistoryService } from '../../services/history.service';
 import { SearchService } from '../../services/search.service';
 import { CommonService } from '../../services/common.service';
+import { ConfigService } from '../../services/config.service';
 import { AvailabilityInModel } from '../../models/availability.model';
-
 
 @Component({
   selector: 'content-history',
@@ -19,7 +19,8 @@ export class HistoryComponent {
   constructor(
     public historyService: HistoryService,
     public commonService: CommonService,
-    private searchService: SearchService){}
+    private searchService: SearchService,
+    private configService: ConfigService){}
 
   readHistory() {
     this.history = this.historyService.getSearch();
@@ -63,6 +64,6 @@ export class HistoryComponent {
       city = 'losangeles.png';
     }
 
-    return `url(assets/images/cities/${city})`;
+    return `url(${this.configService.staticUrl}/assets/images/cities/${city})`;
   }
 }

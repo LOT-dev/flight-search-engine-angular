@@ -7,7 +7,7 @@
           <div class="fligh-info">
             <section class="bound outbound">
               <div class="logo">
-                <span class="img" [style.background-image]="'url(assets/images/'+out.outbound.segments[0].carrier+'.jpg)'"></span>
+                <span class="img" [style.background-image]="logotype(out.outbound.segments[0].carrier)"></span>
               </div>
               <div class="date">
                 <div>{{out.outbound.segments[0].departureDate | date:'yyyy-MM-dd'}}, <strong>{{out.outbound.segments[0].departureDate | date:'HH:mm'}}</strong></div>

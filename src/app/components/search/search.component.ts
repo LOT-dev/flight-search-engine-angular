@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { FilterService } from '../../services/filter.service';
+import { ConfigService } from '../../services/config.service';
 import { FilterModel } from '../../models/filters.model';
 
 @Component({
@@ -13,8 +14,11 @@ export class SearchComponent {
 
   public filterParams: FilterModel;
 
-  constructor(public searchService: SearchService, private filterService: FilterService) {
-    this.filterParams = this.filterService.filterInitParams;
+  constructor(
+    public searchService: SearchService,
+    private filterService: FilterService,
+    private configService: ConfigService) {
+      this.filterParams = this.filterService.filterInitParams;
   }
 
   calculateDuration(duration: number): string {
@@ -39,9 +43,13 @@ export class SearchComponent {
       this.filterParams = event;
   }
 
-  // filter results
+  //* filter results */
   checkFilters(data, filter) {
     return this.filterService.checkFilters(data, filter);
   }
 
+  //* produce url for an airline logo */
+  logotype(carrier: string) {
+    return `url(${this.configService.staticUrl}/assets/images/${carrier}.jpg)`;
+  }
 }

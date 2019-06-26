@@ -17,7 +17,6 @@ export class AuthService {
 
   createToken(): Observable<SessionOutModel>  {
     let body = {
-      'app_id': this.configService.apiCredentials.appId,
     	'secret_key': this.configService.apiCredentials.secretKey
     };
     return this.restService.post(`auth/token/get`, body);

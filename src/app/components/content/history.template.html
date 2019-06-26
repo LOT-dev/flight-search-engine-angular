@@ -2,7 +2,7 @@
   <mat-card class="card history-card">
     <ng-container *ngIf="history; else noHistory">
       <mat-card class="history-item" *ngFor="let h of history; let i = index"
-        (click)="searchFromHistory(i)" [style.background-image]="cityImage(h.destination[0])">
+        (click)="searchFromHistory(i)" [ngStyle]="{'background-image': cityImage(h.destination[0])}">
         <div class="details">
           <div class="title">{{h.origin[0]}} - {{h.destination[0]}}</div>
           <div class="dates"><mat-icon>flight_takeoff</mat-icon>{{makeDate(h.departureDate[0]) | date }}</div>
