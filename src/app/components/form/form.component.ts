@@ -90,13 +90,17 @@ export class FormComponent implements OnInit, OnDestroy {
       .searchFlights(this.searchParams)
       .subscribe(
          (ret: AvailabilityOutModel) => {
-           this.searchService.out = ret;
-           this.filterService.calculateMaxPrice(ret.data);
-           this.historyService.saveSearch(this.searchParams.params);
+           if (ret.data.length > 0) {
+             this.searchService.out = ret;
+             this.filterService.calculateMaxPrice(ret.data);
+             this.historyService.saveSearch(this.searchParams.params);
+           } else {
+             this.errorMessage = 'No results found.';
+           }
          },
          err => {
            if (err.status == 400) {
-             this.errorMessage = 'No results found';
+             this.errorMessage = 'No results found.';
            } else if (err.error.code === 41211 || err.error.code === 41866) {
              this.errorMessage = 'No results for selected dates.';
            } else {

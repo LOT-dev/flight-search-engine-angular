@@ -18,6 +18,7 @@ export class SearchComponent {
     public searchService: SearchService,
     private filterService: FilterService,
     private configService: ConfigService) {
+      console.log(this.searchService);
       this.filterParams = this.filterService.filterInitParams;
   }
 
