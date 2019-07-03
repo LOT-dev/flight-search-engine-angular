@@ -13,6 +13,6 @@ export class AirportsService {
   }
 
   getAirports(): Observable<AiportModel[]>  {
-      return this.restService.get(`airports/get`);
+      return this.restService.get(`common/airports/get`);
   }
 }
